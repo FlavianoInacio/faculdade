@@ -1,5 +1,5 @@
 <?php
-App::uses('AppController', 'Controller','Professores');
+App::uses('AppController', 'Controller');
 /**
  * Materias Controller
  *
@@ -54,6 +54,7 @@ class MateriasController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The materia could not be saved. Please, try again.'));
 			}
+		
 		}
 		$professores = $this->Materia->Professore->find('list',array('fields' =>array('Professore.nome')));
 		$semestres = $this->Materia->Semestre->find('list',array('fields'=>('Semestre.titulo')));
@@ -81,6 +82,9 @@ class MateriasController extends AppController {
 		} else {
 			$options = array('conditions' => array('Materia.' . $this->Materia->primaryKey => $id));
 			$this->request->data = $this->Materia->find('first', $options);
+			$professores = $this->Materia->Professore->find('list',array('fields' =>array('Professore.nome')));
+			$semestres = $this->Materia->Semestre->find('list',array('fields'=>('Semestre.titulo')));
+			$this->set(compact('professores','semestres'));
 		}
 	}
 

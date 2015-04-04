@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
  * Tarefa Model
  *
  * @property Tipostarefa $Tipostarefa
+ * @property Materia $Materia
  */
 class Tarefa extends AppModel {
 
@@ -14,6 +15,16 @@ class Tarefa extends AppModel {
  */
 	public $validate = array(
 		'tipostarefa_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'materia_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -36,6 +47,13 @@ class Tarefa extends AppModel {
 		'Tipostarefa' => array(
 			'className' => 'Tipostarefa',
 			'foreignKey' => 'tipostarefa_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Materia' => array(
+			'className' => 'Materia',
+			'foreignKey' => 'materia_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

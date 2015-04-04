@@ -20,10 +20,10 @@
 		<td><?php echo h($materia['Materia']['created']); ?>&nbsp;</td>
 		<td><?php echo h($materia['Materia']['modified']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($materia['Professore']['nome'], array('controller' => 'professores', 'action' => 'view', $materia['Materia']['professore_id'])); ?>
+			<?php echo $this->Html->link($materia['Professore']['nome'], array('controller' => 'professores', 'action' => 'view', $materia['Professore']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($materia['Semestre']['titulo'], array('controller' => 'semestres', 'action' => 'view', $materia['Materia']['semestre_id'])); ?>
+			<?php echo $this->Html->link($materia['Semestre']['titulo'], array('controller' => 'semestres', 'action' => 'view', $materia['Semestre']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $materia['Materia']['id'])); ?>
@@ -56,5 +56,7 @@
 		<li><?php echo $this->Html->link(__('New Professore'), array('controller' => 'professores', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Semestres'), array('controller' => 'semestres', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Semestre'), array('controller' => 'semestres', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Tarefas'), array('controller' => 'tarefas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Tarefa'), array('controller' => 'tarefas', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

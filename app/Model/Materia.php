@@ -1,10 +1,11 @@
 <?php
-App::uses('AppModel', 'Model','Professore');
+App::uses('AppModel', 'Model');
 /**
  * Materia Model
  *
  * @property Professore $Professore
  * @property Semestre $Semestre
+ * @property Tarefa $Tarefa
  */
 class Materia extends AppModel {
 
@@ -59,4 +60,26 @@ class Materia extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Tarefa' => array(
+			'className' => 'Tarefa',
+			'foreignKey' => 'materia_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

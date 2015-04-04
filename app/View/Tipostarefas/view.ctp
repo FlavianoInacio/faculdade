@@ -44,6 +44,7 @@
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
 		<th><?php echo __('Tipostarefa Id'); ?></th>
+		<th><?php echo __('Materia Id'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($tipostarefa['Tarefa'] as $tarefa): ?>
@@ -53,6 +54,7 @@
 			<td><?php echo $tarefa['created']; ?></td>
 			<td><?php echo $tarefa['modified']; ?></td>
 			<td><?php echo $tarefa['tipostarefa_id']; ?></td>
+			<td><?php echo $tarefa['materia_id']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'tarefas', 'action' => 'view', $tarefa['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'tarefas', 'action' => 'edit', $tarefa['id'])); ?>

@@ -6,6 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('titulo');
 		echo $this->Form->input('tipostarefa_id');
+		echo $this->Form->input('materia_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

@@ -55,8 +55,9 @@ class TarefasController extends AppController {
 				$this->Session->setFlash(__('The tarefa could not be saved. Please, try again.'));
 			}
 		}
-		$tipostarefas = $this->Tarefa->Tipostarefa->find('list');
-		$this->set(compact('tipostarefas'));
+		$tipostarefas = $this->Tarefa->Tipostarefa->find('list',array('fields'=>'Tipostarefa.titulo'));
+		$materias = $this->Tarefa->Materia->find('list',array('fields'=>'Materia.titulo'));
+		$this->set(compact('tipostarefas','materias'));
 	}
 
 /**
@@ -81,8 +82,9 @@ class TarefasController extends AppController {
 			$options = array('conditions' => array('Tarefa.' . $this->Tarefa->primaryKey => $id));
 			$this->request->data = $this->Tarefa->find('first', $options);
 		}
-		$tipostarefas = $this->Tarefa->Tipostarefa->find('list');
-		$this->set(compact('tipostarefas'));
+		$tipostarefas = $this->Tarefa->Tipostarefa->find('list',array('fields'=>'Tipostarefa.titulo'));
+		$materias = $this->Tarefa->Materia->find('list',array('fields'=>'Materia.titulo'));
+		$this->set(compact('tipostarefas','materias'));
 	}
 
 /**

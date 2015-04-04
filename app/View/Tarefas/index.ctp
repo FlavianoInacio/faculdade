@@ -8,6 +8,7 @@
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th><?php echo $this->Paginator->sort('tipostarefa_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('materia_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -19,7 +20,9 @@
 		<td><?php echo h($tarefa['Tarefa']['created']); ?>&nbsp;</td>
 		<td><?php echo h($tarefa['Tarefa']['modified']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($tarefa['Tipostarefa']['id'], array('controller' => 'tipostarefas', 'action' => 'view', $tarefa['Tipostarefa']['id'])); ?>
+			<?php echo $this->Html->link($tarefa['Tipostarefa']['titulo'], array('controller' => 'tipostarefas', 'action' => 'view', $tarefa['Tipostarefa']['id'])); ?>
+		</td>
+		<td><?php echo $this->Html->link($tarefa['Materia']['titulo'], array('controller' => 'tipostarefas', 'action' => 'view', $tarefa['Materia']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tarefa['Tarefa']['id'])); ?>

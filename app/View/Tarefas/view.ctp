@@ -26,6 +26,11 @@
 			<?php echo $this->Html->link($tarefa['Tipostarefa']['id'], array('controller' => 'tipostarefas', 'action' => 'view', $tarefa['Tipostarefa']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Materia Id'); ?></dt>
+		<dd>
+			<?php echo h($tarefa['Tarefa']['materia_id']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

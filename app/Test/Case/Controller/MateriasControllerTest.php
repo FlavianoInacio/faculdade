@@ -15,7 +15,9 @@ class MateriasControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.materia',
 		'app.professore',
-		'app.semestre'
+		'app.semestre',
+		'app.tarefa',
+		'app.tipostarefa'
 	);
 
 /**
